@@ -33,14 +33,14 @@ const Services = () => {
   return (
     <section id="services" className="py-24 relative">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            <span className="text-gradient">Nasze Usługi</span>
+            <span className="text-gradient animate-shimmer bg-clip-text text-transparent">Nasze Usługi</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-6 italic">
             3 filary nowoczesnego marketingu
           </p>
-          <p className="text-sm text-primary font-medium">
+          <p className="text-sm text-primary font-semibold animate-pulse">
             ✨ Wybierz dowolne usługi – nie musisz brać pełnego pakietu
           </p>
         </div>
@@ -49,10 +49,10 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 card-glow group animate-fade-in"
+              className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 card-glow group animate-scale-in hover-lift"
               style={{ animationDelay: service.delay }}
             >
-              <div className={`w-16 h-16 rounded-2xl bg-${service.color}/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+              <div className={`w-16 h-16 rounded-2xl bg-${service.color}/10 flex items-center justify-center mb-6 group-hover:scale-125 transition-all duration-300 animate-glow`}>
                 <service.icon className={`text-${service.color}`} size={32} />
               </div>
               
@@ -60,14 +60,14 @@ const Services = () => {
                 {service.title}
               </h3>
               
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-foreground/80 leading-relaxed">
                 {service.description}
               </p>
 
               {service.cta ? (
                 <div className="mt-6">
                   <Button
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold hover-lift animate-glow"
                     onClick={() => window.open('https://calendly.com', '_blank')}
                   >
                     Umów darmową konsultację
@@ -75,7 +75,7 @@ const Services = () => {
                 </div>
               ) : (
                 <div className="mt-6 pt-6 border-t border-border">
-                  <span className={`text-sm font-medium text-${service.color}`}>
+                  <span className={`text-sm font-semibold text-${service.color} italic group-hover:translate-x-2 inline-block transition-transform`}>
                     Dowiedz się więcej →
                   </span>
                 </div>

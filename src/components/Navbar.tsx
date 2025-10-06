@@ -28,7 +28,7 @@ const Navbar = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-2xl font-display font-bold text-gradient hover:scale-105 transition-transform"
+            className="text-2xl font-display font-bold text-gradient hover:scale-105 transition-all hover-lift animate-shimmer bg-clip-text text-transparent"
           >
             Łukasz Dębiec Marketing
           </button>
