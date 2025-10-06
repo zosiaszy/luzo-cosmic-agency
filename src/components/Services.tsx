@@ -35,13 +35,13 @@ const Services = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            <span className="text-gradient animate-shimmer bg-clip-text text-transparent">Nasze Usługi</span>
+            <span className="text-gradient animate-shimmer bg-clip-text text-transparent text-glow">Nasze Usługi</span>
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-6 italic">
-            3 filary nowoczesnego marketingu
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-6 italic animate-pulse-slow">
+            <span className="border-b-2 border-primary/30 pb-1">3 filary nowoczesnego marketingu</span>
           </p>
-          <p className="text-sm text-primary font-semibold animate-pulse">
-            ✨ Wybierz dowolne usługi – nie musisz brać pełnego pakietu
+          <p className="text-sm text-primary font-bold animate-pulse-slow">
+            ✨ Wybierz <span className="text-secondary">dowolne usługi</span> – nie musisz brać pełnego pakietu
           </p>
         </div>
 
@@ -49,44 +49,57 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 card-glow group animate-scale-in hover-lift"
+              className="p-8 bg-card border-border hover:border-primary transition-all duration-500 card-highlight hover-glow group animate-scale-in relative overflow-hidden"
               style={{ animationDelay: service.delay }}
             >
-              <div className={`w-16 h-16 rounded-2xl bg-${service.color}/10 flex items-center justify-center mb-6 group-hover:scale-125 transition-all duration-300 animate-glow`}>
-                <service.icon className={`text-${service.color}`} size={32} />
-              </div>
-              
-              <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              
-              <p className="text-foreground/80 leading-relaxed">
-                {service.description}
-              </p>
-
-              {service.cta ? (
-                <div className="mt-6">
-                  <Button
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold hover-lift animate-glow"
-                    onClick={() => window.open('https://calendly.com', '_blank')}
-                  >
-                    Umów darmową konsultację
-                  </Button>
+              <div className="relative z-10">
+                <div className="relative mb-6">
+                  <div className={`absolute inset-0 bg-${service.color}/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 animate-pulse-slow`}></div>
+                  <div className={`relative w-20 h-20 rounded-2xl bg-${service.color}/10 flex items-center justify-center group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 animate-glow shadow-xl`}>
+                    <service.icon className={`text-${service.color}`} size={36} />
+                  </div>
                 </div>
-              ) : (
-                <div className="mt-6 pt-6 border-t border-border">
-                  <span className={`text-sm font-semibold text-${service.color} italic group-hover:translate-x-2 inline-block transition-transform`}>
-                    Dowiedz się więcej →
+                
+                <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+                  <span className="border-b-2 border-transparent group-hover:border-primary/50 pb-1 transition-all">
+                    {service.title}
                   </span>
-                </div>
-              )}
+                </h3>
+                
+                <p className="text-foreground/80 leading-relaxed mb-6">
+                  {service.description}
+                </p>
+
+                {service.cta ? (
+                  <div className="mt-6">
+                    <Button
+                      className="w-full bg-gradient-primary hover:bg-gradient-primary text-primary-foreground font-bold hover-lift animate-gradient-x shadow-lg hover:shadow-2xl transition-all duration-300"
+                      onClick={() => window.open('https://calendly.com', '_blank')}
+                    >
+                      <span className="text-glow">Umów darmową konsultację</span>
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="mt-6 pt-6 border-t border-border group-hover:border-primary/30 transition-colors">
+                    <span className={`text-sm font-bold text-${service.color} italic group-hover:translate-x-3 inline-flex items-center gap-2 transition-all duration-300`}>
+                      Dowiedz się więcej 
+                      <span className="group-hover:animate-bounce">→</span>
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* Decorative corner accent */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-primary opacity-10 blur-2xl group-hover:opacity-30 transition-opacity duration-500"></div>
             </Card>
           ))}
         </div>
       </div>
 
-      {/* Background decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
+      {/* Enhanced Background decoration */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10 animate-float animate-pulse-slow" />
+      <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-10 animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10 animate-float" style={{ animationDelay: '4s' }} />
     </section>
   );
 };
