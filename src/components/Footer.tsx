@@ -10,10 +10,10 @@ const Footer = () => {
           {/* Logo and Copyright */}
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-display font-bold text-gradient mb-2">
-              LUZO MMA
+              DBC MARKETING
             </h3>
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Modern Marketing Agency. Wszystkie prawa zastrzeżone.
+              © {currentYear} Łukasz Dębiec DBC. Wszystkie prawa zastrzeżone.
             </p>
           </div>
 
@@ -38,7 +38,7 @@ const Footer = () => {
               <Linkedin className="text-foreground/70 group-hover:text-primary group-hover:scale-110 transition-all" size={20} />
             </a>
             <a
-              href="mailto:kontakt@luzomma.pl"
+              href="mailto:kontakt@dbcmarketing.pl"
               className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-secondary/20 transition-colors group"
               aria-label="Email"
             >

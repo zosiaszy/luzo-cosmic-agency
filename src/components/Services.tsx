@@ -1,28 +1,32 @@
-import { Brain, Megaphone, Code } from "lucide-react";
+import { Users, Globe, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const services = [
     {
-      icon: Brain,
-      title: "AI & Automatyzacja",
-      description: "Wykorzystujemy najnowsze technologie AI do automatyzacji procesów marketingowych, analizy danych i personalizacji komunikacji z klientami.",
+      icon: Users,
+      title: "Systemy Pozyskiwania Klientów",
+      description: "Wdrażamy unikalne systemy pozyskiwania klientów dla naszych partnerów. Sprawdź czy możemy wdrożyć naszą metodę w TWOIM biznesie!",
       color: "primary",
-      delay: "0s"
+      delay: "0s",
+      cta: true
     },
     {
-      icon: Megaphone,
-      title: "Marketing Digitalowy",
-      description: "Kompleksowe strategie social media, content marketing, SEO i kampanie reklamowe dostosowane do Twojej marki i grupy docelowej.",
+      icon: Globe,
+      title: "Profesjonalne Strony WWW",
+      description: "Tworzenie nowoczesnych, responsywnych stron internetowych, które przyciągają uwagę i konwertują odwiedzających w klientów.",
       color: "secondary",
-      delay: "0.2s"
+      delay: "0.2s",
+      cta: false
     },
     {
-      icon: Code,
-      title: "Rozwój Web",
-      description: "Projektowanie i tworzenie nowoczesnych, responsywnych stron internetowych i aplikacji, które przyciągają uwagę i konwertują odwiedzających.",
+      icon: Sparkles,
+      title: "Branding & Social Media",
+      description: "Kompleksowy branding marki i profesjonalne prowadzenie mediów społecznościowych, które budują rozpoznawalność i zaangażowanie.",
       color: "accent",
-      delay: "0.4s"
+      delay: "0.4s",
+      cta: false
     }
   ];
 
@@ -60,11 +64,22 @@ const Services = () => {
                 {service.description}
               </p>
 
-              <div className="mt-6 pt-6 border-t border-border">
-                <span className={`text-sm font-medium text-${service.color}`}>
-                  Dowiedz się więcej →
-                </span>
-              </div>
+              {service.cta ? (
+                <div className="mt-6">
+                  <Button
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+                    onClick={() => window.open('https://calendly.com', '_blank')}
+                  >
+                    Umów darmową konsultację
+                  </Button>
+                </div>
+              ) : (
+                <div className="mt-6 pt-6 border-t border-border">
+                  <span className={`text-sm font-medium text-${service.color}`}>
+                    Dowiedz się więcej →
+                  </span>
+                </div>
+              )}
             </Card>
           ))}
         </div>

@@ -30,7 +30,7 @@ const Navbar = () => {
             onClick={() => scrollToSection("hero")}
             className="text-2xl font-display font-bold text-gradient hover:scale-105 transition-transform"
           >
-            LUZO MMA
+            Łukasz Dębiec Marketing
           </button>
 
           {/* Desktop Navigation */}

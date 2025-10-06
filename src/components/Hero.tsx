@@ -32,15 +32,15 @@ const Hero = () => {
       {/* Content */}
       <div className="relative container mx-auto px-4 lg:px-8 text-center z-10">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 animate-fade-in">
-          <span className="text-gradient">LUZO MMA</span>
+          <span className="text-gradient">DBC MARKETING</span>
         </h1>
         
         <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 mb-4 animate-fade-in font-display" style={{ animationDelay: '0.2s' }}>
-          Modern Marketing Agency
+          #Growth Digital Solutions
         </p>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          Agencja oparta na automatyzacji i sztucznej inteligencji
+          Cyfrowe rozwiązania wzrostu dla Twojego biznesu
         </p>
 
         <Button
