@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Premium dark theme with gold accents */
+    /* Premium dark + BLUE/NAVY accents */
     --background: 222 47% 6%;
     --foreground: 210 40% 98%;
 
@@ -18,63 +18,45 @@ All colors MUST be HSL.
     --popover: 222 47% 8%;
     --popover-foreground: 210 40% 98%;
 
-    /* Premium gold primary */
-    --primary: 45 100% 60%;
+    /* === NEW PALETTE (blue/navy) === */
+    --primary: 215 100% 62%;            /* jasny niebieski (akcent tytułów/CTA) */
     --primary-foreground: 222 47% 6%;
-
-    /* Rose gold secondary */
-    --secondary: 15 80% 65%;
+    --secondary: 250 95% 68%;           /* indigo/fiolet (drugi akcent jak na screenie) */
     --secondary-foreground: 222 47% 6%;
+    --accent: 190 95% 55%;              /* cyjan (delikatne rozbłyski) */
+    --accent-foreground: 222 47% 6%;
 
     --muted: 222 47% 12%;
     --muted-foreground: 215 20% 65%;
-
-    /* Cyan accent */
-    --accent: 189 100% 50%;
-    --accent-foreground: 222 47% 6%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 222 47% 15%;
     --input: 222 47% 15%;
-    --ring: 45 100% 60%;
+
+    /* ring = primary, żeby focus miał niebieską obwódkę */
+    --ring: 215 100% 62%;
 
     --radius: 0.75rem;
 
-    /* Premium gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(45 100% 60%), hsl(15 80% 65%));
-    --gradient-secondary: linear-gradient(135deg, hsl(189 100% 50%), hsl(280 80% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 6%), hsl(280 80% 20%), hsl(45 100% 20%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 100% 70%), hsl(35 100% 55%), hsl(45 100% 70%));
-    
-    /* Glow effects */
-    --glow-gold: 0 0 30px hsl(45 100% 60% / 0.5);
-    --glow-rose: 0 0 30px hsl(15 80% 65% / 0.5);
-    --glow-cyan: 0 0 30px hsl(189 100% 50% / 0.5);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-}
+    /* === GRADIENTS (pod hero + teksty) === */
+    /* główny gradient: niebieski → indigo (jak na Twoim zrzucie) */
+    --gradient-primary: linear-gradient(135deg, hsl(215 100% 62%), hsl(250 95% 68%));
+    /* drugi – cyjan → fiolet, do dekorów */
+    --gradient-secondary: linear-gradient(135deg, hsl(190 95% 55%), hsl(265 80% 60%));
+    /* tło hero – od granatu do ciemnego niebieskiego */
+    --gradient-hero: linear-gradient(135deg, hsl(222 47% 6%), hsl(230 60% 12%), hsl(215 80% 18%));
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
+    /* === GLOW (zamieniamy złote rozbłyski na niebieskie) === */
+    --glow-gold: 0 0 30px hsl(215 100% 62% / 0.5);   /* teraz BLUE */
+    --glow-rose: 0 0 30px hsl(250 95% 68% / 0.5);    /* indigo */
+    --glow-cyan: 0 0 30px hsl(190 95% 55% / 0.5);    /* cyjan */
   }
 }
 
 @layer utilities {
+  /* tekstowy gradient będzie korzystał z nowego --gradient-primary */
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
@@ -85,185 +67,14 @@ All colors MUST be HSL.
     background-image: var(--gradient-secondary);
   }
 
-  .card-glow {
-    transition: var(--transition-smooth);
-  }
+  /* 👉 Dodaj te dwie klasy, bo używasz gdzieś bg-gradient-primary/bg-gradient-secondary */
+  .bg-gradient-primary { background-image: var(--gradient-primary); }
+  .bg-gradient-secondary { background-image: var(--gradient-secondary); }
 
-  .card-glow:hover {
-    box-shadow: var(--glow-gold);
-    transform: translateY(-8px);
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-  }
-
-  .animate-glow {
-    animation: glow 3s ease-in-out infinite alternate;
-  }
-
-  @keyframes glow {
-    from { 
-      box-shadow: var(--glow-gold);
-      filter: brightness(1);
-    }
-    to { 
-      box-shadow: var(--glow-rose);
-      filter: brightness(1.2);
-    }
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-  }
-
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-  }
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .animate-shimmer {
-    animation: shimmer 2s infinite;
-    background: linear-gradient(
-      90deg,
-      hsl(45 100% 60%) 0%,
-      hsl(35 100% 55%) 50%,
-      hsl(45 100% 70%) 100%
-    );
-    background-size: 200% 100%;
-  }
-
-  @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-  }
-
-  .hover-lift {
-    transition: var(--transition-bounce);
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-12px) scale(1.02);
-  }
-
-  .animate-border-glow {
-    position: relative;
-    border: 2px solid transparent;
-    background: linear-gradient(hsl(222 47% 8%), hsl(222 47% 8%)) padding-box,
-                var(--gradient-primary) border-box;
-  }
-
-  .animate-border-glow::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    padding: 2px;
-    background: var(--gradient-primary);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .animate-border-glow:hover::before {
-    opacity: 1;
-    animation: rotate-border 3s linear infinite;
-  }
-
-  @keyframes rotate-border {
-    to { transform: rotate(360deg); }
-  }
-
+  /* podmień złoty glow pod nagłówkami na niebieski/indigo */
   .text-glow {
-    text-shadow: 0 0 20px hsl(45 100% 60% / 0.5),
-                 0 0 40px hsl(45 100% 60% / 0.3);
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  @keyframes pulse-slow {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .7; }
-  }
-
-  .hover-glow {
-    transition: all 0.3s ease;
-  }
-
-  .hover-glow:hover {
-    box-shadow: 0 0 30px hsl(45 100% 60% / 0.6),
-                0 0 60px hsl(45 100% 60% / 0.3);
-    transform: translateY(-8px);
-  }
-
-  .animate-gradient-x {
-    background-size: 200% 100%;
-    animation: gradient-x 3s ease infinite;
-  }
-
-  @keyframes gradient-x {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  .card-highlight {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card-highlight::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      45deg,
-      transparent,
-      hsl(45 100% 60% / 0.1),
-      transparent
-    );
-    transform: rotate(45deg);
-    transition: all 0.6s;
-  }
-
-  .card-highlight:hover::after {
-    animation: shine 1.5s ease-in-out infinite;
-  }
-
-  @keyframes shine {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    text-shadow:
+      0 0 20px hsl(215 100% 62% / 0.5),
+      0 0 40px hsl(250 95% 68% / 0.3);
   }
 }

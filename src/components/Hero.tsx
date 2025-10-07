@@ -26,31 +26,29 @@ const Hero = () => {
       </div>
 
       {/* Animated Gradient Orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-float animate-glow" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+  
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 lg:px-8 text-center z-10">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 animate-fade-in animate-glow text-glow">
-          <span className="text-gradient animate-shimmer bg-clip-text text-transparent">DBC MARKETING</span>
+      <div className="relative container mx-auto px-5 lg:px-8 text-center z-10">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 animate-fade-in text-glow">
+          <span className="bg-gradient-primary bg-clip-text text-glow animate-fade-in">DBC MARKETING</span>
         </h1>
         
-        <p className="text-xl md:text-2xl lg:text-3xl text-primary mb-4 animate-fade-in font-display italic animate-pulse-slow text-glow" style={{ animationDelay: '0.2s' }}>
-          #Growth Digital Solutions
+        <p className="text-xl md:text-2xl lg:text-3xl text-primary mb-4 animate-fade-in text-glow font-display italic animate-pulse-slow text-glow" style={{ animationDelay: '0.2s' }}>
+          Marketing, który dowozi klientów
         </p>
         
         <p className="text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto animate-slide-up font-light" style={{ animationDelay: '0.4s' }}>
-          <span className="border-b-2 border-primary/50 pb-1">Cyfrowe rozwiązania wzrostu</span> dla Twojego biznesu
+          <span className="border-b-2 border-primary/50 pb-1">Wzrost marki zaczyna się tutaj</span> 
         </p>
 
         <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <Button
             size="lg"
             onClick={() => scrollToSection("services")}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-10 py-7 rounded-full shadow-lg hover:shadow-primary/50 transition-all group hover-lift animate-glow"
+            className="bg-gradient-secondary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-10 py-7 rounded-full shadow-lg hover:shadow-primary/50 transition-all group hover-lift animate-glow"
           >
-            Poznaj nasze usługi
+            Zobacz, jak to robimy
             <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
           </Button>
 

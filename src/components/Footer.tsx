@@ -50,7 +50,7 @@ const Footer = () => {
         {/* Tagline */}
         <div className="text-center mt-8 pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground font-medium">
-            Powered by AI & Creativity 🚀
+            Powered by <b>Our Creativity 🚀</b>
           </p>
         </div>
       </div>

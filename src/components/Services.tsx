@@ -4,30 +4,32 @@ import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const services = [
+    
+  
     {
-      icon: Users,
-      title: "Systemy Pozyskiwania Klientów",
-      description: "Wdrażamy unikalne systemy pozyskiwania klientów dla naszych partnerów. Sprawdź czy możemy wdrożyć naszą metodę w TWOIM biznesie!",
-      color: "primary",
-      delay: "0s",
-      cta: true
+      icon: Sparkles,
+      title: "Branding & Social Media",
+      description: "Kompleksowy branding marki i profesjonalne prowadzenie mediów społecznościowych, które budują rozpoznawalność i zaangażowanie. Ustawiamy filary treści, kalendarz publikacji i szablony, żeby komunikacja była spójna i regularna.",
+      color: "accent",
+      delay: "0.4s",
+      cta: false
     },
-    {
+      {
       icon: Globe,
       title: "Profesjonalne Strony WWW",
-      description: "Tworzenie nowoczesnych, responsywnych stron internetowych, które przyciągają uwagę i konwertują odwiedzających w klientów.",
+      description: "Tworzenie nowoczesnych, responsywnych stron internetowych, które przyciągają uwagę i konwertują odwiedzających w klientów. Tworzymy zarówno landing page’e, jak i pełne serwisy z blogiem, portfolio czy sklepem, gotowe do skalowania. ",
       color: "secondary",
       delay: "0.2s",
       cta: false
     },
     {
-      icon: Sparkles,
-      title: "Branding & Social Media",
-      description: "Kompleksowy branding marki i profesjonalne prowadzenie mediów społecznościowych, które budują rozpoznawalność i zaangażowanie.",
-      color: "accent",
-      delay: "0.4s",
-      cta: false
-    }
+      icon: Users,
+      title: "Systemy Pozyskiwania Klientów",
+      description: "Content, który przyciąga. Oferty, które konwertują. Wdrażamy unikalne systemy pozyskiwania klientów. Sprawdź, czy możemy wdrożyć nasze metody w TWOIM biznesie!",
+      color: "primary",
+      delay: "0s",
+      cta: true
+    },
   ];
 
   return (
@@ -35,13 +37,13 @@ const Services = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            <span className="text-gradient animate-shimmer bg-clip-text text-transparent text-glow">Nasze Usługi</span>
+            <span className="bg-gradient-primary bg-clip-text text-glow animate-fade-in">Nasze Usługi</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-6 italic animate-pulse-slow">
             <span className="border-b-2 border-primary/30 pb-1">3 filary nowoczesnego marketingu</span>
           </p>
-          <p className="text-sm text-primary font-bold animate-pulse-slow">
-            ✨ Wybierz <span className="text-secondary">dowolne usługi</span> – nie musisz brać pełnego pakietu
+          <p className="text-sm text-secondary font-bold animate-pulse-slow">
+            ✨ Wybierz dowolne usługi – nie musisz pełnego pakietu
           </p>
         </div>
 
@@ -71,14 +73,14 @@ const Services = () => {
                 </p>
 
                 {service.cta ? (
-                  <div className="mt-6">
-                    <Button
-                      className="w-full bg-gradient-primary hover:bg-gradient-primary text-primary-foreground font-bold hover-lift animate-gradient-x shadow-lg hover:shadow-2xl transition-all duration-300"
-                      onClick={() => window.open('https://calendly.com', '_blank')}
-                    >
-                      <span className="text-glow">Umów darmową konsultację</span>
-                    </Button>
+                   <div className="mt-6 pt-6 border-t border-border group-hover:border-primary/30 transition-colors">
+                    <span className={`text-sm font-bold text-${service.color} italic group-hover:translate-x-3 inline-flex items-center gap-2 transition-all duration-300`}>
+                      Dowiedz się więcej 
+                      <span className="group-hover:animate-bounce">→</span>
+                    </span>
                   </div>
+                  
+                  
                 ) : (
                   <div className="mt-6 pt-6 border-t border-border group-hover:border-primary/30 transition-colors">
                     <span className={`text-sm font-bold text-${service.color} italic group-hover:translate-x-3 inline-flex items-center gap-2 transition-all duration-300`}>

@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Sparkles, Award, Target } from "lucide-react";
 import lukaszPhoto from "@/assets/lukasz-ceo.jpg";
+import zosiaPhoto from "@/assets/zosia-final.png"
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            <span className="text-gradient animate-shimmer bg-clip-text text-transparent text-glow">O nas</span>
+            <span className="bg-gradient-primary bg-clip-text text-glow animate-fade-in">O nas</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto italic animate-pulse-slow">
             Zespół ekspertów <span className="text-primary font-semibold">digital marketingu</span>
@@ -39,44 +40,49 @@ const About = () => {
                   Łukasz Dębiec
                 </h3>
                 
-                <p className="text-primary text-sm font-bold mb-4 italic uppercase tracking-wider animate-shimmer bg-clip-text text-transparent bg-gradient-primary">
+                <p className="text-primary text-sm font-bold mb-4 italic uppercase tracking-wider bg-clip-text bg-gradient-primary">
                   CEO & Founder
                 </p>
                 
                 <p className="text-foreground/80 leading-relaxed">
-                  Ekspert w dziedzinie <span className="text-primary font-semibold">digital marketingu</span> z wieloletnim 
-                  doświadczeniem w budowaniu <span className="italic">strategii wzrostu</span> dla biznesów.
+                  Wizjoner i strateg, który kieruje agencją w stronę innowacyjnych rozwiązań marketingowych opartych na AI.
                 </p>
               </div>
             </div>
           </Card>
 
           {/* Zosia Card */}
-          <Card className="p-8 bg-card border-border hover:border-secondary transition-all duration-500 card-highlight hover-glow group animate-scale-in" style={{ animationDelay: '0.2s' }}>
-            <div className="text-center">
-              <div className="relative w-24 h-24 mx-auto mb-6">
-                <div className="absolute inset-0 bg-gradient-secondary rounded-2xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity animate-pulse-slow"></div>
-                <div className="relative w-full h-full rounded-2xl bg-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                  <Sparkles className="text-secondary animate-pulse-slow" size={40} />
+
+ <Card className="p-8 bg-card border-border hover:border-primary transition-all duration-500 card-highlight hover-glow group animate-scale-in relative overflow-hidden">
+            <div className="relative z-10">
+              <div className="relative w-48 h-48 mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-primary rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-opacity animate-pulse-slow"></div>
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/50 group-hover:border-primary transition-all duration-500 shadow-2xl animate-glow">
+                  <img 
+                    src={zosiaPhoto} 
+                    alt="Łukasz Dębiec - CEO & Founder"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
               </div>
-              
+
+               <div className="text-center">
               <div className="inline-block mb-4">
                 <Target className="text-secondary mx-auto animate-pulse-slow" size={28} />
               </div>
               
               <h3 className="text-3xl font-display font-bold mb-2 group-hover:text-secondary transition-colors">
-                Zosia
+                Zofia Szyposzyńska
               </h3>
               
               <p className="text-secondary text-sm font-bold mb-4 italic uppercase tracking-wider">
-                Content & Creator Director
+                Content Creator & Web Developer
               </p>
               
               <p className="text-foreground/80 leading-relaxed">
-                Specjalistka od <span className="text-secondary font-semibold">contentu i kreacji wizualnej</span>, 
-                tworząca <span className="italic">angażujące treści</span> dla social media.
+               Kreatywna dusza agencji, odpowiedzialna za unikalne treści i strategie content marketingowe.
               </p>
+            </div>
             </div>
           </Card>
         </div>
@@ -84,17 +90,15 @@ const About = () => {
         {/* Mission Card */}
         <Card className="p-12 bg-gradient-to-br from-card via-card to-primary/5 border-primary/30 max-w-4xl mx-auto text-center animate-scale-in card-highlight hover-glow group relative overflow-hidden" style={{ animationDelay: '0.4s' }}>
           <div className="relative z-10">
-            <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center mb-6 mx-auto group-hover:scale-125 transition-transform duration-500 animate-glow shadow-2xl">
-              <Sparkles className="text-primary-foreground animate-pulse-slow" size={40} />
-            </div>
+            
             <h3 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              <span className="text-gradient animate-shimmer bg-clip-text text-transparent text-glow">Nasza Misja</span>
+              <span className="bg-gradient-primary bg-clip-text text-glow animate-fade-in">Nasza Misja</span>
             </h3>
             <p className="text-lg text-foreground/90 leading-relaxed">
               W <span className="text-primary font-bold text-xl animate-pulse-slow">DBC MARKETING</span> wierzymy, że każdy biznes 
               zasługuje na <span className="border-b-2 border-primary/50 pb-1">nowoczesne, efektywne rozwiązania marketingowe</span>. 
               Łączymy <span className="italic text-primary">najnowsze technologie</span> z kreatywnością, aby dostarczać 
-              rezultaty, które <span className="font-bold text-secondary">przekraczają oczekiwania</span>.
+              rezultaty, które <span className="font-bold text-primary">przekraczają oczekiwania</span>.
             </p>
           </div>
           

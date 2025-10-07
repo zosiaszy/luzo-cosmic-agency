@@ -3,23 +3,29 @@ import { X } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
-import portfolio1 from "@/assets/portfolio-1.jpg";
-import portfolio2 from "@/assets/portfolio-2.jpg";
-import portfolio3 from "@/assets/portfolio-3.jpg";
-import portfolio4 from "@/assets/portfolio-4.jpg";
-import portfolio5 from "@/assets/portfolio-5.jpg";
-import portfolio6 from "@/assets/portfolio-6.jpg";
-
+import portfolio1 from "@/assets/portfolio-1.png";
+import portfolio11 from "@/assets/portfolio-11.png";
+import portfolio12 from "@/assets/portfolio-12.png";
+import portfolio4 from "@/assets/portfolio-4.png";
+import portfolio5 from "@/assets/portfolio-5.png";
+import portfolio10 from "@/assets/portfolio-10.png";
+import portfolio7 from "@/assets/portfolio-7.png";
+import portfolio8 from "@/assets/portfolio-8.png";
+import portfolio9 from "@/assets/portfolio-9.png"
 const Portfolio = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const projects = [
     { id: 1, image: portfolio1, title: "E-commerce Fashion", category: "Sklep Online" },
-    { id: 2, image: portfolio2, title: "Luxury Restaurant", category: "Gastronomia" },
-    { id: 3, image: portfolio3, title: "Fitness App", category: "Aplikacja Mobile" },
+    { id: 11, image: portfolio11, title: "Luxury Restaurant", category: "Gastronomia" },
+    { id: 12, image: portfolio12, title: "Fitness App", category: "Aplikacja Mobile" },
     { id: 4, image: portfolio4, title: "SaaS Platform", category: "Tech Startup" },
+    { id: 8, image: portfolio8, title: "SaaS Platform", category: "Tech Startup" },
+    { id: 9, image: portfolio9, title: "Creative Agency", category: "Portfolio" },
     { id: 5, image: portfolio5, title: "Creative Agency", category: "Portfolio" },
-    { id: 6, image: portfolio6, title: "Real Estate", category: "Nieruchomości" },
+    
+    { id: 6, image: portfolio10, title: "Real Estate", category: "Nieruchomości" },
+    { id: 7, image: portfolio7, title: "Dietetyk", category: "Usługi" },
   ];
 
   return (
@@ -27,10 +33,10 @@ const Portfolio = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            <span className="text-gradient">Portfolio</span>
+            <span className="bg-gradient-primary bg-clip-text text-glow animate-fade-in">Portfolio</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Przykłady naszych realizacji - strony internetowe stworzone przez Łukasza
+            Przykłady naszych realizacji - strony internetowe:
           </p>
         </div>
 

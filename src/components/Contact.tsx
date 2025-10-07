@@ -49,10 +49,10 @@ const Contact = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            <span className="text-gradient">Kontakt</span>
+            <span className="bg-gradient-primary bg-clip-text text-glow animate-fade-in">Kontakt</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Skontaktuj się z nami - odpowiadamy na każdą wiadomość
+            Skontaktuj się z nami - odpowiadamy na <b>każdą </b>wiadomość!
           </p>
         </div>
 
@@ -98,8 +98,8 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Opowiedz nam o swoim projekcie..."
-                  rows={6}
+                  placeholder="Porozmawiaj z nami..."
+                  rows={11}
                   className="bg-background border-border resize-none"
                 />
               </div>
@@ -170,7 +170,7 @@ const Contact = () => {
                 Gotowy na rozmowę?
               </h3>
               <p className="text-muted-foreground">
-                Umów się na darmową konsultację i poznaj możliwości rozwoju Twojej marki w świecie cyfrowym.
+                Umów się na darmową konsultację i poznaj możliwości rozwoju Twojej marki za pomocą naszych rozwiązań.
               </p>
             </Card>
           </div>
