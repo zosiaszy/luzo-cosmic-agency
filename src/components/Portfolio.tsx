@@ -21,35 +21,35 @@ const Portfolio = () => {
       image: portfolioPsychologist, 
       title: "Strona Psychologa", 
       category: "Zdrowie & Wellness",
-      link: "https://lovable.dev/projects/83bde5b8-02df-40ad-b5e7-4cc7181254a2"
+      link: "https://genuine-growth-page.lovable.app"
     },
     { 
       id: 2, 
       image: portfolioNailSalon, 
       title: "Salon Paznokci", 
       category: "Beauty & Uroda",
-      link: "https://lovable.dev/projects/92ed7516-4700-43ff-912f-6706a9091320"
+      link: "https://nails-art-studio.lovable.app"
     },
     { 
       id: 3, 
       image: portfolioBeautySalon, 
       title: "Salon Kosmetyczny", 
       category: "Beauty & Spa",
-      link: "https://lovable.dev/projects/630a9174-7a01-4500-9643-0f1e9bf11321"
+      link: "https://premium-beauty-blossom.lovable.app"
     },
     { 
       id: 4, 
       image: portfolioModelAgency, 
       title: "Agencja Modelek", 
       category: "Fashion & Modeling",
-      link: "https://lovable.dev/projects/0f9a8faa-7dfc-4ea9-94c1-03c291ef1cd2"
+      link: "https://model-arc-gallery.lovable.app"
     },
     { 
       id: 5, 
       image: portfolioPhysiotherapist, 
       title: "Fizjoterapeuta", 
       category: "Zdrowie & Rehabilitacja",
-      link: "https://lovable.dev/projects/f979153d-3bcf-4d4b-9a8c-4efc60d2dc8b"
+      link: "https://move-restore-pro.lovable.app"
     },
     { 
       id: 6, 
@@ -63,7 +63,7 @@ const Portfolio = () => {
       image: portfolioDancer, 
       title: "Tancerz", 
       category: "Sztuka & Performance",
-      link: null
+      link: "https://rhythm-and-grace-port.lovable.app"
     },
     { 
       id: 8, 
