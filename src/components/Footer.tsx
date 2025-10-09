@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Mail } from "lucide-react";
+import dbcIcon from "@/assets/dbc-icon.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,9 +10,16 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           {/* Logo and Copyright */}
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-display font-bold text-gradient mb-2">
-              DBC MARKETING
-            </h3>
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
+              <img 
+                src={dbcIcon} 
+                alt="DBC Marketing Logo" 
+                className="w-10 h-10 animate-pulse-slow"
+              />
+              <h3 className="text-2xl font-display font-bold text-gradient">
+                DBC MARKETING
+              </h3>
+            </div>
             <p className="text-sm text-muted-foreground">
               © {currentYear} Łukasz Dębiec DBC. Wszystkie prawa zastrzeżone.
             </p>
