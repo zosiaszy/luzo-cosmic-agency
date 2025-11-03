@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import PrivacyPolicy from "@/components/PrivacyPolicy";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -13,6 +15,8 @@ const Contact = () => {
     email: "",
     message: ""
   });
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +31,15 @@ const Contact = () => {
       return;
     }
 
+    if (!privacyAccepted) {
+      toast({
+        title: "Błąd",
+        description: "Proszę zaakceptować politykę prywatności",
+        variant: "destructive"
+      });
+      return;
+    }
+
     // Here you would typically send the form data to your backend
     toast({
       title: "Wiadomość wysłana!",
@@ -35,6 +48,7 @@ const Contact = () => {
 
     // Reset form
     setFormData({ name: "", email: "", message: "" });
+    setPrivacyAccepted(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -104,10 +118,30 @@ const Contact = () => {
                 />
               </div>
 
+              <div className="flex items-start space-x-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <Checkbox 
+                  id="privacy" 
+                  checked={privacyAccepted}
+                  onCheckedChange={(checked) => setPrivacyAccepted(checked as boolean)}
+                  className="mt-1"
+                />
+                <label htmlFor="privacy" className="text-sm text-muted-foreground leading-relaxed">
+                  Akceptuję{" "}
+                  <button
+                    type="button"
+                    onClick={() => setShowPrivacyPolicy(true)}
+                    className="text-primary hover:text-primary/80 underline transition-colors"
+                  >
+                    Politykę Prywatności
+                  </button>
+                  {" "}i wyrażam zgodę na przetwarzanie moich danych osobowych
+                </label>
+              </div>
+
               <Button
                 type="submit"
                 className="w-full bg-gradient-primary hover:scale-105 text-primary-foreground font-semibold py-6 animate-gradient-x hover-lift transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: '0.4s' }}
+                style={{ animationDelay: '0.5s' }}
               >
                 Wyślij wiadomość
               </Button>
@@ -181,6 +215,9 @@ const Contact = () => {
       {/* Background decorations */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse-slow" />
       <div className="absolute top-1/4 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -z-10 animate-float" />
+
+      {/* Privacy Policy Dialog */}
+      <PrivacyPolicy open={showPrivacyPolicy} onOpenChange={setShowPrivacyPolicy} />
     </section>
   );
 };

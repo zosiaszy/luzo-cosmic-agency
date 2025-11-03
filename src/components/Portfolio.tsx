@@ -12,6 +12,7 @@ import portfolioDentist from "@/assets/portfolio-dentist.png";
 import portfolioDancer from "@/assets/portfolio-dancer.png";
 import portfolioTattoo from "@/assets/portfolio-tattoo.png";
 import portfolioCarpenter from "@/assets/portfolio-carpenter.png";
+import portfolioNexuss from "@/assets/portfolio-nexuss.png";
 const Portfolio = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -78,6 +79,13 @@ const Portfolio = () => {
       title: "Stolarz", 
       category: "Rzemiosło & Meble",
       link: "https://wood-soul-craft.lovable.app"
+    },
+    { 
+      id: 10, 
+      image: portfolioNexuss, 
+      title: "Nexuss Energy Solutions", 
+      category: "Energia & Technologia",
+      link: "https://preview--energy-nexus-solutions.lovable.app"
     },
   ];
 
